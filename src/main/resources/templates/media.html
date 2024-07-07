@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TempusMachina | Entrar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* <uniquifier>: Use a unique and descriptive class name */
+        /* <weight>: Use a value from 100 to 900 */
+
+        .kumbh-sans {
+            font-family: "Kumbh Sans", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 400;
+            font-style: normal;
+            font-variation-settings:
+                "YOPQ" 300;
+            width: 60%;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #272A34;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+        }
+
+        .profile-container {
+            background: #22262F;
+            padding: 20px;
+            border-radius: 5px;
+            color: #EEEEEE;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            border-radius: 5px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #1C2B4F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: 500ms;
+        }
+
+        button:hover {
+            background: #435A8C;
+        }
+
+        .media-card {
+            background-color: #22262F;
+            border: 1px solid #34415F
+        }
+
+        .media-card img {
+            border-radius: 10px;
+        }
+
+        .media-card-title {
+            color: white;
+        }
+
+        .navbar-custom {
+            background-color: #22262F;
+            margin-bottom: 2%;
+        }
+
+        .navbar-custom .navbar-brand,
+        .navbar-custom .nav-link,
+        .navbar-custom {
+            color: white;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.sair:hover {
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kumbh-sans">
+        <form th:action="@{/profile}" method="post">
+            <nav class="profile-container navbar navbar-expand-lg navbar-custom">
+                <a class="navbar-brand" href="#">TempusMachina</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="midias.html">Mídias</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <a class="nav-link" href="login.html">Sair</a>
+                    </form>
+                </div>
+            </nav>
+
+            <div class="profile-container container profile-section">
+                <h4>Mídias marcadas</h4>
+                <div class="filter-buttons">
+                    <button>Todos</button>
+                    <button>Filmes</button>
+                    <button>Séries</button>
+                    <button>Músicas</button>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-md-3">
+                        <div class="card media-card">
+                            <img src="../static/images/Deadpool&Wolverine.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title media-card-title">Deadpool & Wolverine</h5>
+                                <p class="card-text">Filme<br>2024<br>⭐⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card media-card">
+                            <img src="../static/images/Houdini.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title media-card-title">Houdini</h5>
+                                <p class="card-text">Filme<br>2024<br>⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card media-card">
+                            <img src="../static/images/Fallout.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title media-card-title">Fallout</h5>
+                                <p class="card-text">Filme<br>2024<br>⭐⭐⭐⭐⭐</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>TempusMachina | Registrar-se</title>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+    <style>
+   		/* <uniquifier>: Use a unique and descriptive class name */
+		/* <weight>: Use a value from 100 to 900 */
+		
+		.kumbh-sans {
+		  font-family: "Kumbh Sans", sans-serif;
+		  font-optical-sizing: auto;
+		  font-weight: 400;
+		  font-style: normal;
+		  font-variation-settings:
+		    "YOPQ" 300;
+		}
+
+	    body {
+		    font-family: Arial, sans-serif;
+		    background-color: #272A34;
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    height: 100vh;
+		    margin: 0;
+		}
+		
+		.login-container {
+		    background: #22262F;
+		    padding: 20px;
+		    border-radius: 5px;
+		    color: #EEEEEE;
+		    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+		}
+		
+		h1 {
+			font-size: 25px;
+			font-weight: 400;
+			margin: 30px 0;
+		}
+		
+		h1, p {
+			text-align: center;
+			width: 100%;
+		}
+		
+		input, button {
+			border-radius: 5px;
+		}
+		
+		input[type="text"], input[type="password"] {
+		    width: 100%;
+		    padding: 10px;
+		    margin: 10px 0;
+		    border: 1px solid #ddd;
+		    box-sizing: border-box;
+		}
+		
+		button {
+		    background-color: #1C2B4F;
+		    color: white;
+		    border: none;
+		    padding: 10px 20px;
+		    cursor: pointer;
+		    width: 100%;
+		    transition: 500ms;
+		}
+		
+		button:hover {
+			background: #435A8C;
+		}
+    </style>
+</head>
+<body>
+<div class="login-container kumbh-sans">
+	<h1>TempusMachina</h1>
+	<p>Registrar conta</p>
+    <form th:action="@{/signup}" th:object="${profile}" method="post">
+        <div><label for="email">Usuário</label>
+            <input type="text" id="email" name="email" placeholder="E-mail" required autofocus></div>
+        <div><label for="firstName">Nome</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Insira o seu primeiro nome" required autofocus></div>
+        <div><label for="lastName">Sobrenome</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Insira o seu sobrenome" required autofocus></div>
+        <div><label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Insira uma senha de 8 dígitos" required></div>
+        <br />
+        <div><button type="submit"><b>Registrar</b></button></div>
+        <br />
+        <span>
+        	Já possui uma conta? <a href="/signin">Entrar</a>
+        </span>
+        <br />
+        <br />
+    </form>
+</div>
+</body>
+</html>
